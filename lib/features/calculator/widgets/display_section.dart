@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 
 class DisplaySection extends StatelessWidget {
 
@@ -46,6 +47,48 @@ class DisplaySection extends StatelessWidget {
 
         keyboardType:
         TextInputType.none,
+
+        inputFormatters: [
+
+          FilteringTextInputFormatter.allow(
+
+            RegExp(
+              r'[0-9+\-×÷%^().πa-zA-Z]',
+            ),
+          ),
+        ],
+
+        onChanged: (value) {
+
+          // REMOVE DOUBLE OPERATORS
+
+          final cleaned =
+          value.replaceAllMapped(
+
+            RegExp(
+              r'([\+\-\×\÷\%\^]){2,}',
+            ),
+
+                (match) {
+
+              return match
+                  .group(0)![0];
+            },
+          );
+
+          if (cleaned != value) {
+
+            controller.text =
+                cleaned;
+
+            controller.selection =
+                TextSelection.collapsed(
+
+                  offset:
+                  cleaned.length,
+                );
+          }
+        },
       ),
     );
   }

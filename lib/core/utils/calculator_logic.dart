@@ -193,9 +193,14 @@ class CalculatorLogic {
         ? text[cursorPos - 1]
         : "";
 
+    final isSingleOperator =
+
+        value.length == 1 &&
+            operators.contains(value);
+
     if (
 
-    operators.contains(value) &&
+    isSingleOperator &&
 
         operators.contains(lastChar)
 
@@ -231,21 +236,21 @@ class CalculatorLogic {
 
     String insertValue = value;
 
+
     // REMOVE LEADING OPERATOR
-    // IF PREVIOUS CHAR IS OPERATOR
+    // ONLY FOR PASTED EXPRESSIONS
 
     if (
 
-    cursorPos > 0 &&
-
-        operators.contains(
-          text[cursorPos - 1],
-        ) &&
-
-        insertValue.isNotEmpty &&
+    insertValue.length > 1 &&
 
         operators.contains(
           insertValue[0],
+        ) &&
+
+        RegExp(r'\d').hasMatch(
+
+          insertValue.substring(1),
         )
 
     ) {
@@ -253,6 +258,7 @@ class CalculatorLogic {
       insertValue =
           insertValue.substring(1);
     }
+
 
     final newText =
 
