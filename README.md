@@ -68,13 +68,13 @@ A modern Flutter Calculator App with:
 
 # Screenshots
 
-| Home Screen | Scientific Calculator |
-|-------------|----------------------|
-| ![Home](screenshots/home.png) | ![Scientific](screenshots/scientific.png) |
+| Home Screen                   | Scientific Calculator                     |
+|-------------------------------|-------------------------------------------|
+| ![Home](screenshots/home.jpg) | ![Scientific](screenshots/scientific.jpg) |
 
-| Unit Converter | Dark Mode |
-|----------------|----------|
-| ![Converter](screenshots/converter.png) | ![Dark](screenshots/dark.png) |
+| Unit Converter                          | Dark Mode                     |
+|-----------------------------------------|-------------------------------|
+| ![Converter](screenshots/converter.jpg) | ![Dark](screenshots/dark.jpg) |
 
 ---
 
