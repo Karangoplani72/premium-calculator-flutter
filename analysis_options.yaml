@@ -1,0 +1,32 @@
+include: package:flutter_lints/flutter.yaml
+
+analyzer:
+  exclude:
+    - build/**
+    - .dart_tool/**
+    - ios/**
+    - android/**
+
+linter:
+  rules:
+
+    # STYLE
+    prefer_const_constructors: true
+    prefer_const_literals_to_create_immutables: true
+    prefer_final_fields: true
+    prefer_final_locals: true
+
+    # CLEAN CODE
+    avoid_print: true
+    unnecessary_this: true
+    unnecessary_const: true
+
+    # UI
+    sized_box_for_whitespace: true
+    use_key_in_widget_constructors: true
+
+    # FLEXIBILITY
+    no_leading_underscores_for_local_identifiers: false
+
+    # DEVELOPMENT RELAXATIONS
+    avoid_unnecessary_containers: false
