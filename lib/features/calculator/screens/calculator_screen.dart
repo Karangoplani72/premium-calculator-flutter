@@ -16,11 +16,19 @@ class CalculatorScreen extends StatefulWidget {
 
 class _CalculatorScreenState extends State<CalculatorScreen> {
   final CalculatorLogic logic = CalculatorLogic();
+  final TextEditingController
+  controller =
+  TextEditingController();
   bool isScientific = false;
   bool isGSTMode = false;
   void _handleTap(String value) {
     setState(() {
-      logic.buttonPressed(value);
+      logic.buttonPressed(
+
+  value,
+
+  controller,
+);
     });
   }
 
@@ -107,13 +115,20 @@ class _CalculatorScreenState extends State<CalculatorScreen> {
       body: SafeArea(
         child: Column(
           children: [
-            if(!isGSTMode)
-            SizedBox(
-              height: isScientific ? 140 : 110,
+            if (!isGSTMode)
 
-              child: DisplaySection(value: logic.output),
-            ),
+              SizedBox(
 
+                height:
+                isScientific
+                    ? 140
+                    : 110,
+
+                child: DisplaySection(
+
+                  controller: controller,
+                ),
+              ),
             Expanded(
               child: Align(
                 alignment: Alignment.bottomCenter,

@@ -1,27 +1,51 @@
 import 'package:flutter/material.dart';
 
 class DisplaySection extends StatelessWidget {
-  final String value;
 
-  const DisplaySection({super.key, required this.value});
+  final TextEditingController controller;
+
+  const DisplaySection({
+
+    super.key,
+
+    required this.controller,
+  });
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
-      alignment: Alignment.centerRight,
 
-      padding: const EdgeInsets.all(24),
+      width: double.infinity,
 
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
+      padding: const EdgeInsets.all(20),
 
-        child: Text(
-          value,
+      alignment: Alignment.bottomRight,
 
-          maxLines: 1,
+      child: TextField(
 
-          style: const TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
+        controller: controller,
+
+        autofocus: true,
+
+        showCursor: true,
+
+        textAlign: TextAlign.right,
+
+        style: const TextStyle(
+
+          fontSize: 42,
+
+          fontWeight: FontWeight.w500,
         ),
+
+        decoration: const InputDecoration(
+
+          border: InputBorder.none,
+        ),
+
+        keyboardType:
+        TextInputType.none,
       ),
     );
   }
