@@ -1,17 +1,111 @@
-# calculator
+# Premium Calculator App
 
-Calculator for daily use
+A modern Flutter Calculator App with:
 
-## Getting Started
+- Basic Calculator
+- Scientific Calculator
+- GST Calculator
+- Unit Converters
+- Currency Converter
+- Dark/Light Theme
+- Calculator History
+- Smooth UI Animations
+- Responsive Design
 
-This project is a starting point for a Flutter application.
+---
 
-A few resources to get you started if this is your first Flutter project:
+# Features
 
-- [Learn Flutter](https://docs.flutter.dev/get-started/learn-flutter)
-- [Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Flutter learning resources](https://docs.flutter.dev/reference/learning-resources)
+## Calculator
+- Basic arithmetic operations
+- Scientific calculations
+- Expression evaluation
+- Real-time expression preview
+- Backspace support
+- Animated display section
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## GST Calculator
+- Add GST
+- Remove GST
+- Multiple GST percentage options
+
+## Unit Converter
+- Length
+- Area
+- Volume
+- Weight
+- Speed
+- Pressure
+- Power
+- Temperature
+- Number System
+
+## Currency Converter
+- Multiple currencies
+- Live conversion support
+- Searchable dropdowns
+
+## UI/UX
+- Dark Mode
+- Smooth transitions
+- Responsive utility grid
+- Search functionality
+- Custom app icon
+- Native splash screen
+
+---
+
+# Tech Stack
+
+- Flutter
+- Dart
+- Provider
+- Hive
+- math_expressions
+- dropdown_search
+
+---
+
+# Screenshots
+
+| Home Screen | Scientific Calculator |
+|-------------|----------------------|
+| ![Home](screenshots/home.png) | ![Scientific](screenshots/scientific.png) |
+
+| Unit Converter | Dark Mode |
+|----------------|----------|
+| ![Converter](screenshots/converter.png) | ![Dark](screenshots/dark.png) |
+
+---
+
+# APK Download
+
+Download latest APK from Releases section.
+
+---
+
+# Installation
+
+```bash
+git clone https://github.com/karangoplani72/premium-calculator-flutter.git
+```
+
+```bash
+flutter pub get
+```
+
+```bash
+flutter run
+```
+
+---
+
+# Developer
+
+Karan Goplani
+
+Portfolio:
+www.karangoplani.in
+
+GitHub:
+https://github.com/karangoplani72
