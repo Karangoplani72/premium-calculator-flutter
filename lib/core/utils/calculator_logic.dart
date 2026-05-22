@@ -1,9 +1,15 @@
-import '../../features/history/models/history_item.dart';
 import 'package:flutter/material.dart';
+
+import '../../features/history/models/history_item.dart';
+
 import '../../features/scientific/services/scientific_service.dart';
+
 class CalculatorLogic {
+
   String output = "0";
+
   String expression = "";
+
   String _current = "";
 
   List<HistoryItem> history = [];
@@ -13,6 +19,7 @@ class CalculatorLogic {
       String value,
 
       TextEditingController controller,
+
       ) {
 
     final text =
@@ -25,6 +32,16 @@ class CalculatorLogic {
         selection.baseOffset;
 
     _current = text;
+
+    final operators = [
+
+      "+",
+      "-",
+      "×",
+      "÷",
+      "%",
+      "^",
+    ];
 
     // CLEAR
     if (value == "AC") {
@@ -76,7 +93,8 @@ class CalculatorLogic {
         _current =
             controller.text;
 
-        output = _current.isEmpty
+        output =
+        _current.isEmpty
             ? "0"
             : _current;
       }
@@ -86,16 +104,6 @@ class CalculatorLogic {
 
     // DECIMAL VALIDATION
     if (value == ".") {
-
-      final operators = [
-
-        "+",
-        "-",
-        "×",
-        "÷",
-        "%",
-        "^",
-      ];
 
       String lastNumber = "";
 
@@ -179,16 +187,6 @@ class CalculatorLogic {
     }
 
     // OPERATOR VALIDATION
-    final operators = [
-
-      "+",
-      "-",
-      "×",
-      "÷",
-      "%",
-      "^",
-    ];
-
     final lastChar =
 
     cursorPos > 0
@@ -230,6 +228,32 @@ class CalculatorLogic {
     }
 
     // INSERT AT CURSOR
+
+    String insertValue = value;
+
+    // REMOVE LEADING OPERATOR
+    // IF PREVIOUS CHAR IS OPERATOR
+
+    if (
+
+    cursorPos > 0 &&
+
+        operators.contains(
+          text[cursorPos - 1],
+        ) &&
+
+        insertValue.isNotEmpty &&
+
+        operators.contains(
+          insertValue[0],
+        )
+
+    ) {
+
+      insertValue =
+          insertValue.substring(1);
+    }
+
     final newText =
 
     text.replaceRange(
@@ -238,7 +262,7 @@ class CalculatorLogic {
 
       cursorPos,
 
-      value,
+      insertValue,
     );
 
     controller.text = newText;
@@ -248,7 +272,7 @@ class CalculatorLogic {
 
           offset:
           cursorPos +
-              value.length,
+              insertValue.length,
         );
 
     _current =
@@ -257,14 +281,15 @@ class CalculatorLogic {
     output = _current;
   }
 
-
-
   void _reset() {
+
     output = "0";
+
     _current = "";
   }
 
   void clearHistory() {
+
     history.clear();
   }
 }
