@@ -76,6 +76,10 @@ A modern Flutter Calculator App with:
 |-----------------------------------------|-------------------------------|
 | ![Converter](screenshots/converter.jpg) | ![Dark](screenshots/dark.jpg) |
 
+| GST Calculation                         | History                       |
+|-----------------------------------------|-------------------------------|
+| ![Converter](screenshots/converter.jpg) | ![Dark](screenshots/dark.jpg) |
+
 ---
 
 # APK Download

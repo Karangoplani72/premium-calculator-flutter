@@ -3,7 +3,19 @@ import 'package:math_expressions/math_expressions.dart';
 class ScientificService {
   static String calculate(String expression) {
     try {
-      expression = expression.replaceAll('×', '*').replaceAll('÷', '/');
+      expression = expression
+
+          .replaceAll('×', '*')
+
+          .replaceAll('÷', '/')
+
+          .replaceAllMapped(
+
+        RegExp(r'(\d)([a-zA-Z\(])'),
+
+            (match) =>
+        '${match.group(1)}*${match.group(2)}',
+      );
 
       final ShuntingYardParser  parser = ShuntingYardParser();
 

@@ -100,9 +100,42 @@ class CalculatorLogic {
     } else if (value == "π") {
       _current += "π";
     } else {
+
+      final operators = [
+
+        "+",
+        "-",
+        "×",
+        "÷",
+        "%",
+        "^",
+      ];
+
+      final lastChar =
+
+      _current.isNotEmpty
+          ? _current[
+      _current.length - 1
+      ]
+          : "";
+
+      if (
+
+      operators.contains(value) &&
+
+          operators.contains(lastChar)
+
+      ) {
+
+        return;
+      }
+
       if (_current == "0") {
+
         _current = value;
+
       } else {
+
         _current += value;
       }
     }
