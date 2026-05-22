@@ -70,7 +70,7 @@ A modern Flutter Calculator App with:
 
 | Home Screen                   | Scientific Calculator                     |
 |-------------------------------|-------------------------------------------|
-| ![Home](screenshots/home.jpg) | ![Scientific](screenshots/scientific.jpg) |
+| ![Home](screenshots/Home.jpg) | ![Scientific](screenshots/scientific.jpg) |
 
 | Unit Converter                          | Dark Mode                     |
 |-----------------------------------------|-------------------------------|
